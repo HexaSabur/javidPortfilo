@@ -12,7 +12,7 @@
     var(--primary-color),
     var(--secondary-color)
   );
-  --max-width: 1150px;
+  --max-width: 1440px;
 }
 
 * {
@@ -103,7 +103,7 @@ body {
 .site-container {
   
   /* YENİSİ: Kutuyu daraltıyoruz ki kenarlarda boşluk kalsın */
-  max-width: 1150px; 
+  max-width: 1440px; 
   
   width: 90%; /* Mobilde kenarlara yapışmaması için %90 yapalım */
   margin: 0 auto;
