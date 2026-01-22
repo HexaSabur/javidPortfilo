@@ -430,9 +430,7 @@ nav {
     color: var(--secondary-color);
   }
 
-  .nav__links li:last-child {
-    display: none;
-  }
+  
 
   .btn__large {
     display: flex;
@@ -494,4 +492,131 @@ nav {
   .portfolio__banner {
     grid-template-columns: repeat(3, 1fr);
   }
+  /* --- DİL MENÜSÜ STİLLERİ --- */
+.lang-dropdown {
+  position: relative;
+  display: inline-block;
+  margin-right: 15px; /* Contact butonuyla arasına mesafe koyar */
+}
+
+/* Yuvarlak Dünya Butonu */
+.lang-btn {
+  background: transparent; /* Arkaplan şeffaf */
+  color: var(--white);
+  border: 2px solid rgba(255, 255, 255, 0.5); /* Hafif beyaz çerçeve */
+  border-radius: 50%; /* Tam yuvarlak yapar */
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lang-btn:hover {
+  background: var(--white);
+  color: var(--primary-color);
+  border-color: var(--white);
+}
+/* --- NAV (MENÜ) DÜZENİ --- */
+nav {
+  /* Bu 3 satır her şeyi yan yana dizer */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  gap: 1rem; /* Elemanlar birbirine yapışmasın */
+}
+
+/* 3. PARÇA (İkon + Buton Grubu) */
+.nav__actions {
+  display: flex;       /* İçindekileri yan yana diz */
+  align-items: center; /* Dikeyde ortala */
+  gap: 15px;           /* İkon ile Buton arasındaki boşluk */
+}
+
+/* Dil Butonunun Yuvarlaklığı */
+.lang-btn {
+  background: transparent;
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.lang-btn:hover {
+  background: var(--white);
+  color: var(--primary-color);
+}
+
+/* Açılır Menü Ayarları */
+.lang-dropdown {
+  position: relative;
+}
+
+.lang-content {
+  display: none;
+  position: absolute;
+  top: 50px; /* Butonun hemen altı */
+  right: -20px; /* Sağa yasla (Sola doğru taşsın) */
+  background-image: var(--gradient-2);
+  min-width: 100px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  z-index: 9999;
+  text-align: left;
+}
+
+.lang-content a {
+  display: block;
+  padding: 10px 15px;
+  color: var(--white);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  font-size: 0.9rem;
+}
+
+/* JS ile açılınca */
+.show {
+  display: block !important;
+}
+
+/* --- MOBİL İÇİN ÖZEL AYAR (ÖNEMLİ!) --- */
+/* Mobilde Contact butonu ve ikon gizlensin mi, yoksa kalsın mı? */
+/* Genelde mobilde menünün içine alınır ama şimdilik ekranda sığması için: */
+@media (max-width: 768px) {
+  .nav__actions {
+    display: none; /* Mobilde yer kaplamasın diye gizledik, menüden açılır */
+  }
+}
+/* --- ARAPÇA (RTL) MODU İÇİN ÖZEL AYARLAR --- */
+[dir="rtl"] .nav__actions {
+  /* Menüdeki ikon ve butonun sırasını koru */
+  flex-direction: row; 
+}
+
+[dir="rtl"] .header__content,
+[dir="rtl"] .header__content h1,
+[dir="rtl"] .header__content .section__description {
+  text-align: right; /* Yazıları sağa yasla */
+}
+
+/* Arapça'da sağdaki dikey yazı (JAWID) solda durmalı */
+[dir="rtl"] .header__image::after {
+  right: auto;
+  left: 1rem;
+}
+
+/* Arapça'da Ok İşareti Yönü */
+[dir="rtl"] .lang-content {
+  text-align: right; /* Menü içi sağa yaslansın */
+}
 }

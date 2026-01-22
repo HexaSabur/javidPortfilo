@@ -8,25 +8,43 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
     <title>Jawid Studio</title>
   </head>
   <body>
    <div class="site-container">
-    <nav>
+   <nav>
       <div class="nav__bar">
         <a href="#"><span class="logo nav__logo">JS</span> J.studio</a>
         <div class="nav__menu__btn" id="menu-btn">
           <i class="ri-menu-3-line"></i>
         </div>
       </div>
+
       <ul class="nav__links" id="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#service">Service</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#contact" class="btn">Ask for price</a></li>
-      </ul>
-      <a href="#contact" class="btn btn__large">Ask for price</a>
+       <li><a href="#home" data-lang="menu_home">Home</a></li>
+  <li><a href="#about" data-lang="menu_about">About</a></li>
+  <li><a href="#service" data-lang="menu_service">Service</a></li>
+  <li><a href="#portfolio" data-lang="menu_portfolio">Portfolio</a></li>
+ </ul>
+
+      <div class="nav__actions">
+        
+        <div class="lang-dropdown">
+          <button class="lang-btn" onclick="toggleLangMenu()">
+            <i class="ri-global-line"></i>
+          </button>
+          <div class="lang-content" id="lang-menu">
+            <a href="#" onclick="changeLanguage('tr')">🇹🇷 TR</a>
+            <a href="#" onclick="changeLanguage('en')">🇬🇧 EN</a>
+            <a href="#" onclick="changeLanguage('de')">🇩🇪 DE</a>
+            <a href="#" onclick="changeLanguage('ar')">🇸🇦 AR</a>
+          </div>
+        </div>
+
+        <a href="#contact" class="btn btn__large" data-lang="menu_contact">Ask for price</a>
+      
+      </div>
     </nav>
     <header class="section__container header__container" id="home">
       <div class="header__image">
@@ -34,9 +52,8 @@
       </div>
       <div class="header__content">
         <div>
-          <h1>UI/UX<br />& Brand Identity<br />Designer</h1>
-        </div>
-        <p class="section__description">
+         <h1 data-lang="header_title">UI/UX &<br />Brand Identity<br />Designer</h1>  </div>
+        <p class="section__description" data-lang="header_desc">
 
              I design user-friendly websites and mobile applications,
              along with clear and consistent brand identities.
@@ -44,7 +61,7 @@
              work smoothly, and help brands communicate effectively with their users.  
         </p>
         <div class="header__btn">
-          <button class="btn">Hire Me Now</button>
+          <button class="btn" data-lang="header_btn">Hire Me Now</button>
         </div>
       </div>
     </header>
@@ -176,7 +193,7 @@
       </div>
     </section>
     <footer class="footer">
-      Copyright © 2023 Web Design Mastery. All rights reserved.
+     jawid © 2026.  All rights reserved.
     </footer>
 </div>
     <script src="https://unpkg.com/scrollreveal"></script>
