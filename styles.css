@@ -310,8 +310,11 @@ nav {
   border-radius: 1rem;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
 }
-
+/* Mevcut kodunda yaklaşık 320. satır civarında */
 .portfolio__card img {
+  width: 100%;         /* Kutunun genişliğini kaplar */
+  height: 300px;       /* YÜKSEKLİK SABİTLENDİ (İstediğin kadar artırıp azaltabilirsin) */
+  object-fit: cover;   /* Resim sıkışmaz, kutuya tam oturacak şekilde kırpılır */
   transition: 0.5s;
 }
 
